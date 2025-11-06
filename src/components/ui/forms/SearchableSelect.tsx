@@ -9,7 +9,7 @@ import {
 } from "../command";
 import { Popover, PopoverContent, PopoverTrigger } from "../popover";
 import clsx from "clsx";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
 type Option = {
   label: string;
