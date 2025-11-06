@@ -1,0 +1,83 @@
+{
+    "arica-y-parinacota": {
+      "nombre": "Región de Arica y Parinacota",
+      "numeral": "XV Región",
+      "comunas": ["Arica", "Camarones", "Putre", "General Lagos"]
+    },
+    "tarapaca": {
+      "nombre": "Región de Tarapacá",
+      "numeral": "I Región",
+      "comunas": ["Iquique", "Alto Hospicio", "Pozo Almonte", "Camiña", "Colchane", "Huara", "Pica"]
+    },
+    "antofagasta": {
+      "nombre": "Región de Antofagasta",
+      "numeral": "II Región",
+      "comunas": ["Antofagasta", "Mejillones", "Sierra Gorda", "Taltal", "Calama", "Ollagüe", "San Pedro de Atacama", "Tocopilla", "María Elena"]
+    },
+    "atacama": {
+      "nombre": "Región de Atacama",
+      "numeral": "III Región",
+      "comunas": ["Copiapó", "Caldera", "Tierra Amarilla", "Chañaral", "Diego de Almagro", "Vallenar", "Alto del Carmen", "Freirina", "Huasco"]
+    },
+    "coquimbo": {
+      "nombre": "Región de Coquimbo",
+      "numeral": "IV Región",
+      "comunas": ["La Serena", "Coquimbo", "Andacollo", "La Higuera", "Paihuano", "Vicuña", "Illapel", "Canela", "Los Vilos", "Salamanca", "Ovalle", "Combarbalá", "Monte Patria", "Punitaqui", "Río Hurtado"]
+    },
+    "valparaiso": {
+      "nombre": "Región de Valparaíso",
+      "numeral": "V Región",
+      "comunas": ["Valparaíso", "Viña del Mar", "Concón", "Quintero", "Puchuncaví", "Casablanca", "Juan Fernández", "Quillota", "La Calera", "La Cruz", "Nogales", "Hijuelas", "San Antonio", "Cartagena", "El Tabo", "El Quisco", "Algarrobo", "Santo Domingo", "San Felipe", "Llaillay", "Catemu", "Panquehue", "Putaendo", "Santa María", "Los Andes", "Calle Larga", "Rinconada", "San Esteban", "Petorca", "Cabildo", "Papudo", "Zapallar", "La Ligua", "Isla de Pascua"]
+    },
+    "region-metropolitana-de-santiago": {
+      "nombre": "Región Metropolitana de Santiago",
+      "numeral": "RM",
+      "comunas": ["Santiago", "Vitacura", "Las Condes", "Lo Barnechea", "Providencia", "Ñuñoa", "La Reina", "Peñalolén", "Macul", "La Florida", "Puente Alto", "Pirque", "San José de Maipo", "San Miguel", "San Joaquín", "La Cisterna", "El Bosque", "San Ramón", "La Granja", "La Pintana", "Lo Espejo", "Pedro Aguirre Cerda", "Estación Central", "Cerrillos", "Maipú", "Pudahuel", "Lo Prado", "Quinta Normal", "Cerro Navia", "Renca", "Independencia", "Recoleta", "Conchalí", "Huechuraba", "Quilicura", "Colina", "Lampa", "Tiltil", "Melipilla", "María Pinto", "Curacaví", "Alhué", "San Pedro", "Talagante", "Peñaflor", "Isla de Maipo", "El Monte", "Padre Hurtado", "Buin", "Paine", "San Bernardo", "Calera de Tango"]
+    },
+    "ohiggins": {
+      "nombre": "Región del Libertador General Bernardo O’Higgins",
+      "numeral": "VI Región",
+      "comunas": ["Rancagua", "Machalí", "Graneros", "Mostazal", "Codegua", "Requínoa", "Rengo", "Malloa", "Quinta de Tilcoco", "San Vicente", "Pichidegua", "Peumo", "Coltauco", "Las Cabras", "Doñihue", "Coínco", "Olivar", "San Fernando", "Chimbarongo", "Nancagua", "Placilla", "Santa Cruz", "Palmilla", "Peralillo", "Chépica", "Lolol", "Pumanque", "Marchigüe", "Litueche", "La Estrella", "Navidad", "Pichilemu"]
+    },
+    "maule": {
+      "nombre": "Región del Maule",
+      "numeral": "VII Región",
+      "comunas": ["Talca", "Maule", "Pelarco", "Pencahue", "Río Claro", "San Clemente", "San Rafael", "Curicó", "Teno", "Romeral", "Rauco", "Sagrada Familia", "Molina", "Hualañé", "Licantén", "Vichuquén", "Linares", "Yerbas Buenas", "Colbún", "Longaví", "Retiro", "Parral", "Cauquenes", "Pelluhue", "Chanco", "Constitución", "Empedrado"]
+    },
+    "nuble": {
+      "nombre": "Región de Ñuble",
+      "numeral": "XVI Región",
+      "comunas": ["Chillán", "Chillán Viejo", "Coihueco", "Pinto", "El Carmen", "San Ignacio", "Pemuco", "Yungay", "Bulnes", "Quillón", "San Nicolás", "San Carlos", "San Fabián", "Ñiquén", "Coelemu", "Ránquil", "Portezuelo", "Ninhue", "Trehuaco", "Cobquecura", "Quirihue"]
+    },
+    "biobio": {
+      "nombre": "Región del Biobío",
+      "numeral": "VIII Región",
+      "comunas": ["Concepción", "Talcahuano", "Hualpén", "Penco", "Tomé", "Chiguayante", "San Pedro de la Paz", "Coronel", "Lota", "Hualqui", "Santa Juana", "Florida", "Cabrero", "Yumbel", "Los Ángeles", "Mulchén", "Negrete", "Nacimiento", "San Rosendo", "Laja", "Quilleco", "Quilaco", "Tucapel", "Santa Bárbara", "Alto Biobío", "Cañete", "Contulmo", "Tirúa", "Lebu", "Arauco", "Los Álamos", "Curanilahue"]
+    },
+    "araucania": {
+      "nombre": "Región de La Araucanía",
+      "numeral": "IX Región",
+      "comunas": ["Temuco", "Padre Las Casas", "Nueva Imperial", "Carahue", "Saavedra", "Teodoro Schmidt", "Toltén", "Vilcún", "Lautaro", "Perquenco", "Galvarino", "Cholchol", "Freire", "Pitrufquén", "Gorbea", "Loncoche", "Villarrica", "Pucón", "Melipeuco", "Cunco", "Curarrehue", "Lonquimay", "Curacautín", "Victoria", "Traiguén", "Lumaco", "Los Sauces", "Angol", "Collipulli", "Renaico", "Purén", "Ercilla"]
+    },
+    "los-rios": {
+      "nombre": "Región de Los Ríos",
+      "numeral": "XIV Región",
+      "comunas": ["Valdivia", "Corral", "Lanco", "Máfil", "Mariquina", "Paillaco", "Los Lagos", "Futrono", "Lago Ranco", "Río Bueno", "La Unión"]
+    },
+    "los-lagos": {
+      "nombre": "Región de Los Lagos",
+      "numeral": "X Región",
+      "comunas": ["Puerto Montt", "Puerto Varas", "Llanquihue", "Frutillar", "Fresia", "Los Muermos", "Calbuco", "Maullín", "Cochamó", "Osorno", "San Juan de la Costa", "San Pablo", "Purranque", "Río Negro", "Puerto Octay", "Puyehue", "Puqueldón", "Queilén", "Quellón", "Quemchi", "Ancud", "Castro", "Chonchi", "Dalcahue", "Curaco de Vélez", "Quinchao", "Hualaihué", "Futaleufú", "Palena", "Chaitén"]
+    },
+    "aysen": {
+      "nombre": "Región de Aysén del General Carlos Ibáñez del Campo",
+      "numeral": "XI Región",
+      "comunas": ["Coyhaique", "Lago Verde", "Aysén", "Cisnes", "Guaitecas", "Río Ibáñez", "Chile Chico", "Cochrane", "Tortel", "O’Higgins"]
+    },
+    "magallanes": {
+      "nombre": "Región de Magallanes y de la Antártica Chilena",
+      "numeral": "XII Región",
+      "comunas": ["Punta Arenas", "Río Verde", "Laguna Blanca", "San Gregorio", "Porvenir", "Primavera", "Timaukel", "Puerto Natales", "Torres del Paine", "Cabo de Hornos (Puerto Williams)", "Antártica"]
+    }
+  }
+  

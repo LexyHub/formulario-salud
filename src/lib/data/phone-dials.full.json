@@ -1,0 +1,1002 @@
+[
+  {
+    "label": "AD",
+    "code": "+376"
+  },
+  {
+    "label": "AE",
+    "code": "+971"
+  },
+  {
+    "label": "AF",
+    "code": "+93"
+  },
+  {
+    "label": "AG",
+    "code": "+1268"
+  },
+  {
+    "label": "AI",
+    "code": "+1264"
+  },
+  {
+    "label": "AL",
+    "code": "+355"
+  },
+  {
+    "label": "AM",
+    "code": "+374"
+  },
+  {
+    "label": "AO",
+    "code": "+244"
+  },
+  {
+    "label": "AQ",
+    "code": "+672"
+  },
+  {
+    "label": "AR",
+    "code": "+54"
+  },
+  {
+    "label": "AS",
+    "code": "+1684"
+  },
+  {
+    "label": "AT",
+    "code": "+43"
+  },
+  {
+    "label": "AU",
+    "code": "+61"
+  },
+  {
+    "label": "AW",
+    "code": "+297"
+  },
+  {
+    "label": "AX",
+    "code": "+358"
+  },
+  {
+    "label": "AZ",
+    "code": "+994"
+  },
+  {
+    "label": "BA",
+    "code": "+387"
+  },
+  {
+    "label": "BB",
+    "code": "+1246"
+  },
+  {
+    "label": "BD",
+    "code": "+880"
+  },
+  {
+    "label": "BE",
+    "code": "+32"
+  },
+  {
+    "label": "BF",
+    "code": "+226"
+  },
+  {
+    "label": "BG",
+    "code": "+359"
+  },
+  {
+    "label": "BH",
+    "code": "+973"
+  },
+  {
+    "label": "BI",
+    "code": "+257"
+  },
+  {
+    "label": "BJ",
+    "code": "+229"
+  },
+  {
+    "label": "BL",
+    "code": "+590"
+  },
+  {
+    "label": "BM",
+    "code": "+1441"
+  },
+  {
+    "label": "BN",
+    "code": "+673"
+  },
+  {
+    "label": "BO",
+    "code": "+591"
+  },
+  {
+    "label": "BQ",
+    "code": "+5997"
+  },
+  {
+    "label": "BR",
+    "code": "+55"
+  },
+  {
+    "label": "BS",
+    "code": "+1242"
+  },
+  {
+    "label": "BT",
+    "code": "+975"
+  },
+  {
+    "label": "BV",
+    "code": "+47"
+  },
+  {
+    "label": "BW",
+    "code": "+267"
+  },
+  {
+    "label": "BY",
+    "code": "+375"
+  },
+  {
+    "label": "BZ",
+    "code": "+501"
+  },
+  {
+    "label": "CA",
+    "code": "+1"
+  },
+  {
+    "label": "CC",
+    "code": "+61"
+  },
+  {
+    "label": "CD",
+    "code": "+243"
+  },
+  {
+    "label": "CF",
+    "code": "+236"
+  },
+  {
+    "label": "CG",
+    "code": "+242"
+  },
+  {
+    "label": "CH",
+    "code": "+41"
+  },
+  {
+    "label": "CI",
+    "code": "+225"
+  },
+  {
+    "label": "CK",
+    "code": "+682"
+  },
+  {
+    "label": "CL",
+    "code": "+56"
+  },
+  {
+    "label": "CM",
+    "code": "+237"
+  },
+  {
+    "label": "CN",
+    "code": "+86"
+  },
+  {
+    "label": "CO",
+    "code": "+57"
+  },
+  {
+    "label": "CR",
+    "code": "+506"
+  },
+  {
+    "label": "CU",
+    "code": "+53"
+  },
+  {
+    "label": "CV",
+    "code": "+238"
+  },
+  {
+    "label": "CW",
+    "code": "+5999"
+  },
+  {
+    "label": "CX",
+    "code": "+61"
+  },
+  {
+    "label": "CY",
+    "code": "+357"
+  },
+  {
+    "label": "CZ",
+    "code": "+420"
+  },
+  {
+    "label": "DE",
+    "code": "+49"
+  },
+  {
+    "label": "DJ",
+    "code": "+253"
+  },
+  {
+    "label": "DK",
+    "code": "+45"
+  },
+  {
+    "label": "DM",
+    "code": "+1767"
+  },
+  {
+    "label": "DO",
+    "code": "+1809"
+  },
+  {
+    "label": "DZ",
+    "code": "+213"
+  },
+  {
+    "label": "EC",
+    "code": "+593"
+  },
+  {
+    "label": "EE",
+    "code": "+372"
+  },
+  {
+    "label": "EG",
+    "code": "+20"
+  },
+  {
+    "label": "EH",
+    "code": "+212"
+  },
+  {
+    "label": "ER",
+    "code": "+291"
+  },
+  {
+    "label": "ES",
+    "code": "+34"
+  },
+  {
+    "label": "ET",
+    "code": "+251"
+  },
+  {
+    "label": "FI",
+    "code": "+358"
+  },
+  {
+    "label": "FJ",
+    "code": "+679"
+  },
+  {
+    "label": "FK",
+    "code": "+500"
+  },
+  {
+    "label": "FM",
+    "code": "+691"
+  },
+  {
+    "label": "FO",
+    "code": "+298"
+  },
+  {
+    "label": "FR",
+    "code": "+33"
+  },
+  {
+    "label": "GA",
+    "code": "+241"
+  },
+  {
+    "label": "GB",
+    "code": "+44"
+  },
+  {
+    "label": "GD",
+    "code": "+1473"
+  },
+  {
+    "label": "GE",
+    "code": "+995"
+  },
+  {
+    "label": "GF",
+    "code": "+594"
+  },
+  {
+    "label": "GG",
+    "code": "+44"
+  },
+  {
+    "label": "GH",
+    "code": "+233"
+  },
+  {
+    "label": "GI",
+    "code": "+350"
+  },
+  {
+    "label": "GL",
+    "code": "+299"
+  },
+  {
+    "label": "GM",
+    "code": "+220"
+  },
+  {
+    "label": "GN",
+    "code": "+224"
+  },
+  {
+    "label": "GP",
+    "code": "+590"
+  },
+  {
+    "label": "GQ",
+    "code": "+240"
+  },
+  {
+    "label": "GR",
+    "code": "+30"
+  },
+  {
+    "label": "GS",
+    "code": "+500"
+  },
+  {
+    "label": "GT",
+    "code": "+502"
+  },
+  {
+    "label": "GU",
+    "code": "+1671"
+  },
+  {
+    "label": "GW",
+    "code": "+245"
+  },
+  {
+    "label": "GY",
+    "code": "+592"
+  },
+  {
+    "label": "HK",
+    "code": "+852"
+  },
+  {
+    "label": "HM",
+    "code": "+61"
+  },
+  {
+    "label": "HN",
+    "code": "+504"
+  },
+  {
+    "label": "HR",
+    "code": "+385"
+  },
+  {
+    "label": "HT",
+    "code": "+509"
+  },
+  {
+    "label": "HU",
+    "code": "+36"
+  },
+  {
+    "label": "ID",
+    "code": "+62"
+  },
+  {
+    "label": "IE",
+    "code": "+353"
+  },
+  {
+    "label": "IL",
+    "code": "+972"
+  },
+  {
+    "label": "IM",
+    "code": "+44"
+  },
+  {
+    "label": "IN",
+    "code": "+91"
+  },
+  {
+    "label": "IO",
+    "code": "+246"
+  },
+  {
+    "label": "IQ",
+    "code": "+964"
+  },
+  {
+    "label": "IR",
+    "code": "+98"
+  },
+  {
+    "label": "IS",
+    "code": "+354"
+  },
+  {
+    "label": "IT",
+    "code": "+39"
+  },
+  {
+    "label": "JE",
+    "code": "+44"
+  },
+  {
+    "label": "JM",
+    "code": "+1876"
+  },
+  {
+    "label": "JO",
+    "code": "+962"
+  },
+  {
+    "label": "JP",
+    "code": "+81"
+  },
+  {
+    "label": "KE",
+    "code": "+254"
+  },
+  {
+    "label": "KG",
+    "code": "+996"
+  },
+  {
+    "label": "KH",
+    "code": "+855"
+  },
+  {
+    "label": "KI",
+    "code": "+686"
+  },
+  {
+    "label": "KM",
+    "code": "+269"
+  },
+  {
+    "label": "KN",
+    "code": "+1869"
+  },
+  {
+    "label": "KP",
+    "code": "+850"
+  },
+  {
+    "label": "KR",
+    "code": "+82"
+  },
+  {
+    "label": "KW",
+    "code": "+965"
+  },
+  {
+    "label": "KY",
+    "code": "+1345"
+  },
+  {
+    "label": "KZ",
+    "code": "+7"
+  },
+  {
+    "label": "LA",
+    "code": "+856"
+  },
+  {
+    "label": "LB",
+    "code": "+961"
+  },
+  {
+    "label": "LC",
+    "code": "+1758"
+  },
+  {
+    "label": "LI",
+    "code": "+423"
+  },
+  {
+    "label": "LK",
+    "code": "+94"
+  },
+  {
+    "label": "LR",
+    "code": "+231"
+  },
+  {
+    "label": "LS",
+    "code": "+266"
+  },
+  {
+    "label": "LT",
+    "code": "+370"
+  },
+  {
+    "label": "LU",
+    "code": "+352"
+  },
+  {
+    "label": "LV",
+    "code": "+371"
+  },
+  {
+    "label": "LY",
+    "code": "+218"
+  },
+  {
+    "label": "MA",
+    "code": "+212"
+  },
+  {
+    "label": "MC",
+    "code": "+377"
+  },
+  {
+    "label": "MD",
+    "code": "+373"
+  },
+  {
+    "label": "ME",
+    "code": "+382"
+  },
+  {
+    "label": "MF",
+    "code": "+590"
+  },
+  {
+    "label": "MG",
+    "code": "+261"
+  },
+  {
+    "label": "MH",
+    "code": "+692"
+  },
+  {
+    "label": "MK",
+    "code": "+389"
+  },
+  {
+    "label": "ML",
+    "code": "+223"
+  },
+  {
+    "label": "MM",
+    "code": "+95"
+  },
+  {
+    "label": "MN",
+    "code": "+976"
+  },
+  {
+    "label": "MO",
+    "code": "+853"
+  },
+  {
+    "label": "MP",
+    "code": "+1670"
+  },
+  {
+    "label": "MQ",
+    "code": "+596"
+  },
+  {
+    "label": "MR",
+    "code": "+222"
+  },
+  {
+    "label": "MS",
+    "code": "+1664"
+  },
+  {
+    "label": "MT",
+    "code": "+356"
+  },
+  {
+    "label": "MU",
+    "code": "+230"
+  },
+  {
+    "label": "MV",
+    "code": "+960"
+  },
+  {
+    "label": "MW",
+    "code": "+265"
+  },
+  {
+    "label": "MX",
+    "code": "+52"
+  },
+  {
+    "label": "MY",
+    "code": "+60"
+  },
+  {
+    "label": "MZ",
+    "code": "+258"
+  },
+  {
+    "label": "NA",
+    "code": "+264"
+  },
+  {
+    "label": "NC",
+    "code": "+687"
+  },
+  {
+    "label": "NE",
+    "code": "+227"
+  },
+  {
+    "label": "NF",
+    "code": "+672"
+  },
+  {
+    "label": "NG",
+    "code": "+234"
+  },
+  {
+    "label": "NI",
+    "code": "+505"
+  },
+  {
+    "label": "NL",
+    "code": "+31"
+  },
+  {
+    "label": "NO",
+    "code": "+47"
+  },
+  {
+    "label": "NP",
+    "code": "+977"
+  },
+  {
+    "label": "NR",
+    "code": "+674"
+  },
+  {
+    "label": "NU",
+    "code": "+683"
+  },
+  {
+    "label": "NZ",
+    "code": "+64"
+  },
+  {
+    "label": "OM",
+    "code": "+968"
+  },
+  {
+    "label": "PA",
+    "code": "+507"
+  },
+  {
+    "label": "PE",
+    "code": "+51"
+  },
+  {
+    "label": "PF",
+    "code": "+689"
+  },
+  {
+    "label": "PG",
+    "code": "+675"
+  },
+  {
+    "label": "PH",
+    "code": "+63"
+  },
+  {
+    "label": "PK",
+    "code": "+92"
+  },
+  {
+    "label": "PL",
+    "code": "+48"
+  },
+  {
+    "label": "PM",
+    "code": "+508"
+  },
+  {
+    "label": "PN",
+    "code": "+64"
+  },
+  {
+    "label": "PR",
+    "code": "+1787"
+  },
+  {
+    "label": "PS",
+    "code": "+970"
+  },
+  {
+    "label": "PT",
+    "code": "+351"
+  },
+  {
+    "label": "PW",
+    "code": "+680"
+  },
+  {
+    "label": "PY",
+    "code": "+595"
+  },
+  {
+    "label": "QA",
+    "code": "+974"
+  },
+  {
+    "label": "RE",
+    "code": "+262"
+  },
+  {
+    "label": "RO",
+    "code": "+40"
+  },
+  {
+    "label": "RS",
+    "code": "+381"
+  },
+  {
+    "label": "RU",
+    "code": "+7"
+  },
+  {
+    "label": "RW",
+    "code": "+250"
+  },
+  {
+    "label": "SA",
+    "code": "+966"
+  },
+  {
+    "label": "SB",
+    "code": "+677"
+  },
+  {
+    "label": "SC",
+    "code": "+248"
+  },
+  {
+    "label": "SD",
+    "code": "+249"
+  },
+  {
+    "label": "SE",
+    "code": "+46"
+  },
+  {
+    "label": "SG",
+    "code": "+65"
+  },
+  {
+    "label": "SH",
+    "code": "+290"
+  },
+  {
+    "label": "SI",
+    "code": "+386"
+  },
+  {
+    "label": "SJ",
+    "code": "+4779"
+  },
+  {
+    "label": "SK",
+    "code": "+421"
+  },
+  {
+    "label": "SL",
+    "code": "+232"
+  },
+  {
+    "label": "SM",
+    "code": "+378"
+  },
+  {
+    "label": "SN",
+    "code": "+221"
+  },
+  {
+    "label": "SO",
+    "code": "+252"
+  },
+  {
+    "label": "SR",
+    "code": "+597"
+  },
+  {
+    "label": "SS",
+    "code": "+211"
+  },
+  {
+    "label": "ST",
+    "code": "+239"
+  },
+  {
+    "label": "SV",
+    "code": "+503"
+  },
+  {
+    "label": "SX",
+    "code": "+1721"
+  },
+  {
+    "label": "SY",
+    "code": "+963"
+  },
+  {
+    "label": "SZ",
+    "code": "+268"
+  },
+  {
+    "label": "TC",
+    "code": "+1649"
+  },
+  {
+    "label": "TD",
+    "code": "+235"
+  },
+  {
+    "label": "TF",
+    "code": "+262"
+  },
+  {
+    "label": "TG",
+    "code": "+228"
+  },
+  {
+    "label": "TH",
+    "code": "+66"
+  },
+  {
+    "label": "TJ",
+    "code": "+992"
+  },
+  {
+    "label": "TK",
+    "code": "+690"
+  },
+  {
+    "label": "TL",
+    "code": "+670"
+  },
+  {
+    "label": "TM",
+    "code": "+993"
+  },
+  {
+    "label": "TN",
+    "code": "+216"
+  },
+  {
+    "label": "TO",
+    "code": "+676"
+  },
+  {
+    "label": "TR",
+    "code": "+90"
+  },
+  {
+    "label": "TT",
+    "code": "+1868"
+  },
+  {
+    "label": "TV",
+    "code": "+688"
+  },
+  {
+    "label": "TW",
+    "code": "+886"
+  },
+  {
+    "label": "TZ",
+    "code": "+255"
+  },
+  {
+    "label": "UA",
+    "code": "+380"
+  },
+  {
+    "label": "UG",
+    "code": "+256"
+  },
+  {
+    "label": "UM",
+    "code": "+1"
+  },
+  {
+    "label": "US",
+    "code": "+1"
+  },
+  {
+    "label": "UY",
+    "code": "+598"
+  },
+  {
+    "label": "UZ",
+    "code": "+998"
+  },
+  {
+    "label": "VA",
+    "code": "+379"
+  },
+  {
+    "label": "VC",
+    "code": "+1784"
+  },
+  {
+    "label": "VE",
+    "code": "+58"
+  },
+  {
+    "label": "VG",
+    "code": "+1284"
+  },
+  {
+    "label": "VI",
+    "code": "+1340"
+  },
+  {
+    "label": "VN",
+    "code": "+84"
+  },
+  {
+    "label": "VU",
+    "code": "+678"
+  },
+  {
+    "label": "WF",
+    "code": "+681"
+  },
+  {
+    "label": "WS",
+    "code": "+685"
+  },
+  {
+    "label": "XK",
+    "code": "+377"
+  },
+  {
+    "label": "YE",
+    "code": "+967"
+  },
+  {
+    "label": "YT",
+    "code": "+262"
+  },
+  {
+    "label": "ZA",
+    "code": "+27"
+  },
+  {
+    "label": "ZM",
+    "code": "+260"
+  },
+  {
+    "label": "ZW",
+    "code": "+263"
+  }
+]
