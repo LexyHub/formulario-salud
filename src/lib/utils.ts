@@ -40,3 +40,15 @@ export function isValidRut(rut: string): boolean {
 
   return dvCalc === dvInput;
 }
+
+export function formatPhone(raw: string) {
+  if (!raw) return "";
+  // target format: x xxxx xxxx (1 + 4 + 4)
+  const a = raw.slice(0, 1);
+  const b = raw.slice(1, 5);
+  const c = raw.slice(5, 9);
+
+  if (!b) return a;
+  if (!c) return `${a} ${b}`;
+  return `${a} ${b} ${c}`;
+}

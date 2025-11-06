@@ -40,20 +40,19 @@ export default function Select({
 }: Props) {
   const isInvalid = Boolean(error);
   const finalClass = twMerge(
-    "outline-none border rounded-sm transition-colors px-4 py-2 min-h-[40px] bg-lexy-input-bg w-full",
+    "outline-none border rounded-sm transition-colors text-sm md:text-base px-4 py-2 min-h-[40px] bg-lexy-input-bg w-full",
     className
   );
 
   return (
-    <div className="flex flex-col items-start justify-start gap-y-2 text-sm md:text-base font-archivo text-lexy-text">
+    <div className='flex flex-col items-start justify-start gap-y-2 text-sm md:text-base font-archivo text-lexy-text'>
       <label
         htmlFor={id}
-        className="flex items-start font-medium text-lexy-text leading-5 w-full"
-      >
-        <span className="flex items-start font-medium text-lexy-text-primary">
+        className='flex items-start font-medium text-lexy-text leading-5 w-full'>
+        <span className='flex items-start font-medium text-lexy-text-primary'>
           {label}
           {required && (
-            <span className="ml-1 text-lexy-brand-primary select-none">*</span>
+            <span className='ml-1 text-lexy-brand-primary select-none'>*</span>
           )}
         </span>
       </label>
@@ -63,14 +62,17 @@ export default function Select({
             "border-lexy-border-input text-lexy-label-field focus-within:border-lexy-brand-primary":
               !isInvalid,
             "border-lexy-danger text-lexy-danger": isInvalid,
-          })}
-        >
-          <BaseSelectValue placeholder={placeholder} />
+            "bg-lexy-input-filled": value !== "",
+            "text-[#666666]": !value || value === "",
+          })}>
+          <BaseSelectValue
+            className='placeholder:text-lexy-text-secondary'
+            placeholder={placeholder}
+          />
         </BaseSelectTrigger>
         <BaseSelectContent
           id={id}
-          className="outline-none border border-lexy-border-input text-lexy-label-field rounded-xs transition-colors bg-white w-full"
-        >
+          className='outline-none border border-lexy-border-input text-lexy-label-field rounded-xs transition-colors bg-white w-full'>
           <BaseSelectGroup>
             <BaseSelectLabel>{label}</BaseSelectLabel>
             {options.map((option) => (
@@ -82,8 +84,8 @@ export default function Select({
         </BaseSelectContent>
       </BaseSelect>
       {isInvalid && (
-        <div className="flex items-center gap-x-1 text-sm leading-5 text-lexy-danger">
-          <CircleX className="w-4 h-4" />
+        <div className='flex items-center gap-x-1 text-sm leading-5 text-lexy-danger'>
+          <CircleX className='w-4 h-4' />
           <span id={`${id}-error`}>{error}</span>
         </div>
       )}
