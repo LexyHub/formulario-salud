@@ -1,8 +1,8 @@
 import { LexySalud } from "@/assets/images";
 import CircularProgress from "@/components/ui/CircularProgress";
 import { useForm } from "@/hooks/useForm";
-import { ContactScheme } from "@/lib/schemes";
-import type { Contact } from "@/lib/types";
+import { ContactScheme } from "@/lib/schemes/contact.scheme";
+import type { Contact } from "@/types/global-context.type";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import FormFields from "./FormFields";

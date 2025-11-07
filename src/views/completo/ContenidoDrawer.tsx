@@ -3,13 +3,13 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerTitle,
-} from "@components/ui/drawer";
+} from "@components/base/Drawer";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import clsx from "clsx";
 
 type Props = {
   active: "preguntas" | "documentos" | "";
-  isapre?: { name: string; url: string; };
+  isapre?: { name: string; url: string };
 };
 
 interface CollapsableProps {
@@ -31,9 +31,14 @@ function Collapsable({
   const contentId = `collapsable-content-${id}`;
 
   return (
-    <div onClick={() => onToggle(id)} className={clsx("flex flex-col rounded-sm border border-lexy-border-input", { "hidden": expandedId && expandedId != id })}>
+    <div
+      onClick={() => onToggle(id)}
+      className={clsx(
+        "flex flex-col rounded-sm border border-lexy-border-input",
+        { hidden: expandedId && expandedId != id }
+      )}>
       <button
-        type="button"
+        type='button'
         aria-expanded={expanded}
         aria-controls={contentId}
         className={clsx(
@@ -41,18 +46,20 @@ function Collapsable({
           {
             "border-b-transparent": !expanded,
             "border-b-[#E6E6E6]": expanded,
-            "hidden": expandedId && expandedId != id
+            hidden: expandedId && expandedId != id,
           }
-        )}
-      >
+        )}>
         {title}
-        {expanded ? <ChevronUp className="size-6" /> : <ChevronDown className="size-6" />}
+        {expanded ? (
+          <ChevronUp className='size-6' />
+        ) : (
+          <ChevronDown className='size-6' />
+        )}
       </button>
       {expanded && (
         <div
           id={contentId}
-          className="p-4 text-start text-sm text-lexy-text-secondary leading-5 whitespace-pre-line"
-        >
+          className='p-4 text-start text-sm text-lexy-text-secondary leading-5 whitespace-pre-line'>
           {children}
         </div>
       )}
@@ -126,20 +133,19 @@ la libertad de elegir dónde y con quien atenderte.`,
 
   if (active === "preguntas") {
     return (
-      <DrawerContent className="bg-white font-archivo">
-        <DrawerHeader className="text-left">
-          <DrawerTitle className="pb-4 border-b border-b-[#E6E6E6] font-medium leading-6">
+      <DrawerContent className='bg-white font-archivo'>
+        <DrawerHeader className='text-left'>
+          <DrawerTitle className='pb-4 border-b border-b-[#E6E6E6] font-medium leading-6'>
             Preguntas Frecuentes
           </DrawerTitle>
-          <div className="py-4 flex flex-col w-full space-y-2">
+          <div className='py-4 flex flex-col w-full space-y-2'>
             {preguntas.map(({ id, title, content }) => (
               <Collapsable
                 key={id}
                 id={id}
                 expandedId={expandedId}
                 onToggle={toggleExpand}
-                title={title}
-              >
+                title={title}>
                 {content}
               </Collapsable>
             ))}
@@ -151,30 +157,40 @@ la libertad de elegir dónde y con quien atenderte.`,
 
   if (active === "documentos") {
     return (
-      <DrawerContent className="bg-white font-archivo">
-        <DrawerHeader className="text-left">
-          <DrawerTitle className="pb-4 border-b border-b-[#E6E6E6] font-medium leading-6">
+      <DrawerContent className='bg-white font-archivo'>
+        <DrawerHeader className='text-left'>
+          <DrawerTitle className='pb-4 border-b border-b-[#E6E6E6] font-medium leading-6'>
             Documentos necesarios
           </DrawerTitle>
-          <div className="py-4 flex flex-col w-full space-y-2 text-sm leading-5 text-lexy-text-secondary">
-            <p>
-              Los documentos que necesitarás para este proceso son:
-            </p>
-            <ul className="list-disc w-fit flex flex-col items-start px-8">
-              <li>Tu <span className="text-lexy-primary">Plan de salud</span></li>
-              <li>Tu <span className="text-lexy-primary">Certificado de afiliación</span></li>
+          <div className='py-4 flex flex-col w-full space-y-2 text-sm leading-5 text-lexy-text-secondary'>
+            <p>Los documentos que necesitarás para este proceso son:</p>
+            <ul className='list-disc w-fit flex flex-col items-start px-8'>
+              <li>
+                Tu <span className='text-lexy-primary'>Plan de salud</span>
+              </li>
+              <li>
+                Tu{" "}
+                <span className='text-lexy-primary'>
+                  Certificado de afiliación
+                </span>
+              </li>
             </ul>
             {isapre && (
               <>
-                <p className="mb-4 mt-12 text-start text-sm">
-                  Si deseas descargarlos ahora, puedes acceder a ellos desde el portal de {isapre.name}.
+                <p className='mb-4 mt-12 text-start text-sm'>
+                  Si deseas descargarlos ahora, puedes acceder a ellos desde el
+                  portal de {isapre.name}.
                 </p>
-                <a className="w-full text-center text-lexy-primary" href={isapre.url}>[ Ir al portal de {isapre.name} ]</a>
+                <a
+                  className='w-full text-center text-lexy-primary'
+                  href={isapre.url}>
+                  [ Ir al portal de {isapre.name} ]
+                </a>
               </>
             )}
           </div>
         </DrawerHeader>
       </DrawerContent>
-    )
+    );
   }
 }

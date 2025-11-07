@@ -2,7 +2,7 @@ import { useCountryDials } from "@/hooks/useCountryDials";
 import clsx from "clsx";
 import { Check, ChevronDown, CircleX } from "lucide-react";
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
-import { Popover, PopoverTrigger, PopoverContent } from "../popover";
+import { Popover, PopoverTrigger, PopoverContent } from "../base/Popover";
 import {
   Command,
   CommandEmpty,
@@ -10,7 +10,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "../command";
+} from "../base/Command";
 import { ReactCountryFlag as Flag } from "react-country-flag";
 import { formatPhone } from "@/lib/utils";
 

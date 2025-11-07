@@ -1,7 +1,7 @@
-import type { Dial } from '@/lib/types';
-import fullDialsJson from '@lib/data/phone-dials.full.json';
-import minifiedDialsJson from '@lib/data/phone-dials.min.json';
-import { useMemo } from 'react';
+import type { Dial } from "@/types/dial.type";
+import fullDialsJson from "@lib/data/phone-dials.full.json";
+import minifiedDialsJson from "@lib/data/phone-dials.min.json";
+import { useMemo } from "react";
 
 const fullDials = fullDialsJson as Dial[];
 const minifiedDials = minifiedDialsJson as Dial[];
@@ -16,7 +16,7 @@ export function useCountryDials({ minified }: Props) {
   }, [minified]);
 
   const dialsAsOption = useMemo(() => {
-    return dials.map(d => ({
+    return dials.map((d) => ({
       label: d.label,
       value: d.code,
     }));

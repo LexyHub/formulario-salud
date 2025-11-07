@@ -7,7 +7,7 @@ import {
   BaseSelectLabel,
   BaseSelectTrigger,
   BaseSelectValue,
-} from "../base-select";
+} from "../base/BaseSelect";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
 

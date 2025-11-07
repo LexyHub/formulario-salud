@@ -1,5 +1,9 @@
 import { createContext, useContext, useReducer, type ReactNode } from "react";
-import type { GlobalState, PersonalData, Contact } from "@lib/types";
+import type {
+  GlobalState,
+  PersonalData,
+  Contact,
+} from "@/types/global-context.type";
 
 type Action =
   | { type: "SET_PERSONAL_DATA"; payload: Partial<PersonalData> }
@@ -16,9 +20,15 @@ const initialState: GlobalState = {
 function reducer(state: GlobalState, action: Action): GlobalState {
   switch (action.type) {
     case "SET_PERSONAL_DATA":
-      return { ...state, personalData: { ...state.personalData, ...action.payload } };
+      return {
+        ...state,
+        personalData: { ...state.personalData, ...action.payload },
+      };
     case "SET_CONTACT_DATA":
-      return { ...state, contactData: { ...state.contactData, ...action.payload } };
+      return {
+        ...state,
+        contactData: { ...state.contactData, ...action.payload },
+      };
     case "SET_IS_REFERIDO":
       return { ...state, isReferido: action.payload };
     case "RESET":
@@ -51,7 +61,8 @@ export function GlobalProvider({ children }: { children: ReactNode }) {
   const reset = () => dispatch({ type: "RESET" });
 
   return (
-    <GlobalContext.Provider value={{ state, setPersonalData, setContactData, setIsReferido, reset }}>
+    <GlobalContext.Provider
+      value={{ state, setPersonalData, setContactData, setIsReferido, reset }}>
       {children}
     </GlobalContext.Provider>
   );
@@ -59,6 +70,7 @@ export function GlobalProvider({ children }: { children: ReactNode }) {
 
 export function useGlobalContext() {
   const context = useContext(GlobalContext);
-  if (!context) throw new Error("useGlobalContext debe usarse dentro de GlobalProvider");
+  if (!context)
+    throw new Error("useGlobalContext debe usarse dentro de GlobalProvider");
   return context;
 }

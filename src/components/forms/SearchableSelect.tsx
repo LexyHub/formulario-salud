@@ -6,8 +6,8 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "../command";
-import { Popover, PopoverContent, PopoverTrigger } from "../popover";
+} from "../base/Command";
+import { Popover, PopoverContent, PopoverTrigger } from "../base/Popover";
 import clsx from "clsx";
 import { useState } from "react";
 

@@ -1,6 +1,6 @@
 import { LexySalud } from "@/assets/images";
 import CircularProgress from "@/components/ui/CircularProgress";
-import Input from "@/components/ui/forms/Input";
+import Input from "@/components/forms/Input";
 import clsx from "clsx";
 import {
   Check,

@@ -5,7 +5,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@components/ui/dialog";
+} from "@components/base/Dialog";
 
 type Props = {
   active: "preguntas" | "documentos" | "";
@@ -35,10 +35,9 @@ function Collapsable({
       onClick={() => onToggle(id)}
       className={clsx(
         "flex flex-col rounded-sm border border-lexy-border-input cursor-pointer"
-      )}
-    >
+      )}>
       <button
-        type="button"
+        type='button'
         aria-expanded={expanded}
         aria-controls={contentId}
         className={clsx(
@@ -47,20 +46,18 @@ function Collapsable({
             "border-b-transparent": !expanded,
             "border-b-[#E6E6E6]": expanded,
           }
-        )}
-      >
+        )}>
         {title}
         {expanded ? (
-          <ChevronUp className="size-6" />
+          <ChevronUp className='size-6' />
         ) : (
-          <ChevronDown className="size-6" />
+          <ChevronDown className='size-6' />
         )}
       </button>
       {expanded && (
         <div
           id={contentId}
-          className="p-4 text-start text-sm text-lexy-text-secondary leading-5 whitespace-pre-line"
-        >
+          className='p-4 text-start text-sm text-lexy-text-secondary leading-5 whitespace-pre-line'>
           {children}
         </div>
       )}
@@ -134,20 +131,19 @@ la libertad de elegir dónde y con quien atenderte.`,
 
   if (active === "preguntas") {
     return (
-      <DialogContent className="w-full max-w-[610px]">
+      <DialogContent className='w-full max-w-[610px]'>
         <DialogHeader>
-          <DialogTitle className="pb-4 border-b border-b-[#E6E6E6] font-medium leading-6">
+          <DialogTitle className='pb-4 border-b border-b-[#E6E6E6] font-medium leading-6'>
             Preguntas frecuentes
           </DialogTitle>
-          <div className="py-4 flex flex-col w-full space-y-2">
+          <div className='py-4 flex flex-col w-full space-y-2'>
             {preguntas.map(({ id, title, content }) => (
               <Collapsable
                 key={id}
                 id={id}
                 expandedId={expandedId}
                 onToggle={toggleExpand}
-                title={title}
-              >
+                title={title}>
                 {content}
               </Collapsable>
             ))}
@@ -159,34 +155,33 @@ la libertad de elegir dónde y con quien atenderte.`,
 
   if (active === "documentos") {
     return (
-      <DialogContent className="bg-white font-archivo">
-        <DialogHeader className="text-left">
-          <DialogTitle className="pb-4 border-b border-b-[#E6E6E6] font-medium leading-6">
+      <DialogContent className='bg-white font-archivo'>
+        <DialogHeader className='text-left'>
+          <DialogTitle className='pb-4 border-b border-b-[#E6E6E6] font-medium leading-6'>
             Documentos necesarios
           </DialogTitle>
-          <div className="py-4 flex flex-col w-full space-y-2 text-sm leading-5 text-lexy-text-secondary">
+          <div className='py-4 flex flex-col w-full space-y-2 text-sm leading-5 text-lexy-text-secondary'>
             <p>Los documentos que necesitarás para este proceso son:</p>
-            <ul className="list-disc w-fit flex flex-col items-start px-8">
+            <ul className='list-disc w-fit flex flex-col items-start px-8'>
               <li>
-                Tu <span className="text-lexy-primary">Plan de salud</span>
+                Tu <span className='text-lexy-primary'>Plan de salud</span>
               </li>
               <li>
                 Tu{" "}
-                <span className="text-lexy-primary">
+                <span className='text-lexy-primary'>
                   Certificado de afiliación
                 </span>
               </li>
             </ul>
             {isapre && (
               <>
-                <p className="mb-4 mt-12 text-start text-sm">
+                <p className='mb-4 mt-12 text-start text-sm'>
                   Si deseas descargarlos ahora, puedes acceder a ellos desde el
                   portal de {isapre.name}.
                 </p>
                 <a
-                  className="w-full text-center text-lexy-primary underline underline-offset-4"
-                  href={isapre.url}
-                >
+                  className='w-full text-center text-lexy-primary underline underline-offset-4'
+                  href={isapre.url}>
                   [ Ir al portal de {isapre.name} ]
                 </a>
               </>

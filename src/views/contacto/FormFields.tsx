@@ -1,7 +1,7 @@
-import CellphoneInput from "@/components/ui/forms/CellphoneInput";
-import Select from "@components/ui/forms/Select";
-import Input from "@components/ui/forms/Input";
-import type { Contact } from "@lib/types";
+import CellphoneInput from "@/components/forms/CellphoneInput";
+import Select from "@/components/forms/Select";
+import Input from "@/components/forms/Input";
+import type { Contact } from "@/types/global-context.type";
 import { isapres } from "./options";
 import { useState } from "react";
 
