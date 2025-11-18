@@ -89,7 +89,7 @@ export default function Completo() {
           />
         </Drawer>
       ) : (
-        <Dialog open={open} onOpenChange={setOpen}>
+        <Dialog modal={true} open={open} onOpenChange={setOpen}>
           <ContenidoDialog
             isapre={{
               name: state.contactData.isapre || "",
