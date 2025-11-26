@@ -9,7 +9,7 @@
   },
   {
     "nombre": "Consalud",
-    "url": "https://consalud.cl",
+    "url": "https://www.consalud.cl/",
     "requisitos": {
       "plan_de_salud": "Puede descargarlo accediendo a tu Sucursal Digital en https://clientes.consalud.cl/\n- Debes ir a Pestaña Mi Plan >> En la sección Resumen de mi Plan >> clickeas el icono Mi plan y descargas",
       "certificado_de_afiliacion": "Para obtener tu certificado de afiliación accede a tu Sucursal Digital en https://clientes.consalud.cl/\n- Debes dirigirte a: En Inicio debes clickear Mis Trámites >> luego clickeas “Mis Certificados” >> debes “Ver y descargar” el segundo certificado llamado “Certificado de afiliación”"

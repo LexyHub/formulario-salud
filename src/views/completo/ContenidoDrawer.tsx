@@ -8,6 +8,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import clsx from "clsx";
 import { faqs } from "@/lib/data/faq";
 import MarkdownContent from "@components/ui/MarkdownContent";
+import { useIsapres } from "@/hooks/useIsapres";
 
 type Props = {
   active: "preguntas" | "documentos" | "";
@@ -69,6 +70,8 @@ function Collapsable({
 
 export default function ContenidoDrawer({ active, isapre }: Props) {
   const [expandedId, setExpandedId] = useState<number>(0);
+  const { getIsapreByName } = useIsapres();
+  const isapreWeb = getIsapreByName(isapre?.name || "");
 
   const toggleExpand = (id: number) =>
     setExpandedId(expandedId === id ? 0 : id);
@@ -126,7 +129,9 @@ export default function ContenidoDrawer({ active, isapre }: Props) {
               </p>
               <a
                 className='w-full text-center text-lexy-primary'
-                href={isapre.url}>
+                href={isapreWeb?.url}
+                target='_blank'
+                rel='noopener noreferrer'>
                 [ Ir al portal de {isapre.name} ]
               </a>
             </>
