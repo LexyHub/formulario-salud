@@ -1,6 +1,6 @@
 import countriesData from "@lib/data/countries.json";
 import regionsData from "@lib/data/regions.json";
-import type { Country, RegionsMap } from "@lib/types";
+import type { Country, RegionsMap } from "@/types/georef.type";
 import { useMemo } from "react";
 
 export function useGeoData() {

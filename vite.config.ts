@@ -1,7 +1,7 @@
-import path from "path"
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import tailwindcss from "@tailwindcss/vite"
+import path from "path";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -24,10 +24,16 @@ export default defineConfig({
       output: {
         manualChunks: {
           react: ["react", "react-dom", "react-router-dom"],
+          ui: [
+            "@radix-ui/react-popover",
+            "@radix-ui/react-select",
+            "@radix-ui/react-collapsible",
+            "@radix-ui/react-dialog",
+          ],
           icons: ["lucide-react", "react-country-flag"],
           validation: ["zod"],
         },
       },
     },
   },
-})
+});

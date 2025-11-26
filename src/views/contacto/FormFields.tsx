@@ -1,9 +1,9 @@
-import CellphoneInput from "@/components/ui/forms/CellphoneInput";
-import Select from "@components/ui/forms/Select";
-import Input from "@components/ui/forms/Input";
-import type { Contact } from "@lib/types";
-import { isapres } from "./options";
+import CellphoneInput from "@/components/forms/CellphoneInput";
+import Select from "@/components/forms/Select";
+import Input from "@/components/forms/Input";
+import type { Contact } from "@/types/global-context.type";
 import { useState } from "react";
+import { useIsapres } from "../../hooks/useIsapres";
 
 type Props = {
   form: Contact;
@@ -13,6 +13,7 @@ type Props = {
 
 export default function FormFields({ form, errors, setField }: Props) {
   const [rawIsapre, setRawIsapre] = useState<string>("");
+  const { isapresOption } = useIsapres();
 
   const handleIsapreSelect = (v: string) => {
     if (v !== "otra") setField("isapre", v);
@@ -47,7 +48,7 @@ export default function FormFields({ form, errors, setField }: Props) {
         error={rawIsapre === "otra" ? "" : errors.isapre}
         value={rawIsapre}
         onChange={handleIsapreSelect}
-        options={isapres}
+        options={isapresOption}
       />
       {rawIsapre === "otra" && (
         <Input

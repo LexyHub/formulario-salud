@@ -1,7 +1,7 @@
 import { useForm } from "@hooks/useForm";
 import { useGeoData } from "@hooks/useGeoData";
-import { PersonalDataScheme } from "@lib/schemes";
-import type { PersonalData } from "@lib/types";
+import { PersonalDataScheme } from "@lib/schemes/personal-data.scheme";
+import type { PersonalData } from "@/types/global-context.type";
 import { LexySalud } from "@assets/images";
 import CircularProgress from "@components/ui/CircularProgress";
 import { ChevronRight } from "lucide-react";

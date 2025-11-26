@@ -1,0 +1,50 @@
+[
+  {
+    "nombre": "Colmena",
+    "url": "https://www.colmena.cl/",
+    "requisitos": {
+      "plan_de_salud": "Puedes descargarlo accediendo a \"Mi Sucursal Virtual\"\n- Debes ir a la pestaña \"Mi Plan\" >> Subpestaña: Plan de salud >> Descargar Plan de Salud (PDF).",
+      "certificado_de_afiliacion": "Puedes descargarlo accediendo a \"Mi Sucursal Virtual\"\n- Debes ir al menú principal >> Documentos de Mi Plan >> Subpestaña: Certificados e Históricos >> Seleccionas certificado de afiliación y vigencia >> Generar certificado"
+    }
+  },
+  {
+    "nombre": "Consalud",
+    "url": "https://www.consalud.cl/",
+    "requisitos": {
+      "plan_de_salud": "Puede descargarlo accediendo a tu Sucursal Digital en https://clientes.consalud.cl/\n- Debes ir a Pestaña Mi Plan >> En la sección Resumen de mi Plan >> clickeas el icono Mi plan y descargas",
+      "certificado_de_afiliacion": "Para obtener tu certificado de afiliación accede a tu Sucursal Digital en https://clientes.consalud.cl/\n- Debes dirigirte a: En Inicio debes clickear Mis Trámites >> luego clickeas “Mis Certificados” >> debes “Ver y descargar” el segundo certificado llamado “Certificado de afiliación”"
+    }
+  },
+  {
+    "nombre": "Banmédica",
+    "url": "https://www.banmedica.cl/",
+    "requisitos": {
+      "plan_de_salud": "Puedes descargarlo accediendo a “Mi Cuenta” en https://www.banmedica.cl/\n- Debes ir a Pestaña Mi Plan >> Subpestaña Mi Plan >> Descarga tu plan.",
+      "certificado_de_afiliacion": "Para obtener tu certificado de afiliación accede a “Mi Cuenta” en https://www.banmedica.cl/\n- Debes dirigirte a: Pestaña Mi Plan >> Subpestaña Descargar mis Certificados >> Certificado de Afiliación >> Para ser presentado en Lexy Salud. Marcar casilla “con información de cargas” >> Generar."
+    }
+  },
+  {
+    "nombre": "Vida Tres",
+    "url": "https://www.vidatres.cl/",
+    "requisitos": {
+      "plan_de_salud": "Puede descargarlo accediendo a “Mi Cuenta” en https://www.vidatres.cl/\n- Debes ir a Pestaña Mi Plan >> Subpestaña Mi Plan >> Descarga tu plan",
+      "certificado_de_afiliacion": "Para obtener tu certificado de afiliación accede a “Mi Cuenta” en https://www.vidatres.cl/\n- Debes dirigirte a: Pestaña Mi Plan >> Descargar mis Certificados >> Certificado de Afiliación >> Para ser presentado en Lexy Salud >> Generar."
+    }
+  },
+  {
+    "nombre": "Nueva Mas Vida",
+    "url": "https://www.nuevamasvida.cl/",
+    "requisitos": {
+      "plan_de_salud": "Puede descargarlo accediendo a tu Sucursal Virtual en https://www.nuevamasvida.cl/\n- Debes ir a Pestaña Contrato de Salud >> SubPestaña: Plan de Salud >> Descargas Plan de Salud Base.",
+      "certificado_de_afiliacion": "Para obtener tu certificado de afiliación accede a tu Sucursal Virtual en https://www.nuevamasvida.cl/\n- Debes dirigirte a: Pestaña Servicios >> SubPestaña: Certificados y Cartolas >> Descargas Certificado de Afiliación y/o Certificado de Afiliación con cargas."
+    }
+  },
+  {
+    "nombre": "Cruz Blanca",
+    "url": "https://cruzblanca.cl",
+    "requisitos": {
+      "plan_de_salud": "Puede descargarlo accediendo a “Mi Cruz Blanca” en https://www.cruzblanca.cl/\n- Debes ir a Pestaña Plan de Salud >> SubPestaña Plan de Salud >> Descargar Plan de Salud (PDF).",
+      "certificado_de_afiliacion": "Para obtener tu certificado de afiliación accede a “Mi Cruz Blanca” en https://www.cruzblanca.cl/\n- Debes dirigirte a: Pestaña Plan de Salud >> SubPestaña Certificados >> Certificado de Afiliación >> Descargar"
+    }
+  }
+]

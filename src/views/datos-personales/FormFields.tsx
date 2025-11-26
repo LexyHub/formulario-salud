@@ -1,6 +1,6 @@
-import Input from "@/components/ui/forms/Input";
-import SearchableSelect from "@/components/ui/forms/SearchableSelect";
-import type { PersonalData } from "@/lib/types";
+import Input from "@/components/forms/Input";
+import SearchableSelect from "@/components/forms/SearchableSelect";
+import type { PersonalData } from "@/types/global-context.type";
 
 // Por el bien del principio DRY descompuse esto en un componente aparte, ya que manejo dos forms distintos en vista mobile y desktop.
 type Props = {
