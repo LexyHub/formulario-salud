@@ -2,16 +2,17 @@ import { LexySalud } from "@/assets/images";
 import CircularProgress from "@/components/ui/CircularProgress";
 import { useForm } from "@/hooks/useForm";
 import { ContactScheme } from "@/lib/schemes/contact.scheme";
-import type { Contact } from "@/types/global-context.type";
+import type { Contact, GlobalState } from "@/types/global-context.type";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import FormFields from "./FormFields";
-import { useGlobalContext } from "@/contexts/GlobalContext";
 import { cn } from "@/lib/utils";
+import { useGlobalStore } from "@/store/useGlobalStore";
+import { uploadData } from "@/services/data.service";
 
 export default function Contacto() {
   const navigate = useNavigate();
-  const { state, setContactData } = useGlobalContext();
+  const { personalData, origen, setContactData } = useGlobalStore();
   const { form, setField, errors, validate, hasErrors } = useForm<Contact>(
     {
       celular: "",
@@ -21,14 +22,25 @@ export default function Contacto() {
     ContactScheme
   );
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const result = validate();
     if (!result.success) {
       return;
     }
     setContactData(result.data);
-    navigate(state.isReferido ? "/referido" : "/completo");
+    const data: GlobalState = {
+      personalData: personalData,
+      contactData: result.data,
+      origen: origen,
+      codigo_referido: "",
+    };
+    try {
+      await uploadData(data);
+      navigate(origen === "referido" ? "/referido" : "/completo");
+    } catch (error) {
+      console.error("Error al subir los datos:", error);
+    }
   };
 
   return (
@@ -39,14 +51,14 @@ export default function Contacto() {
         </div>
         <div className='grid grid-cols-[auto_1fr] items-center gap-x-4 px-6 py-4'>
           <CircularProgress
-            progress={state.isReferido ? 50 : 100}
+            progress={origen === "referido" ? 50 : 100}
             className='size-16'
             emptyClass='text-lexy-menta'
             fillClass='text-lexy-menta-oscuro'>
             <div className='text-sm font-semibold leading-5 text-white space-x-0.5'>
               <span className='text-lexy-menta-oscuro'>2</span>
               <span>/</span>
-              <span>{state.isReferido ? "3" : "2"}</span>
+              <span>{origen === "referido" ? "3" : "2"}</span>
             </div>
           </CircularProgress>
           <div>
@@ -54,7 +66,7 @@ export default function Contacto() {
               Únete a los miles que han mejorado su cobertura en{" "}
               <span className='text-lexy-menta-oscuro'>Salud Mental</span>
             </h4>
-            {state.isReferido && (
+            {origen === "referido" && (
               <span className='text-lexy-text-disabled text-xs leading-[18px]'>
                 Siguiente: Referido
               </span>
@@ -117,15 +129,15 @@ export default function Contacto() {
                 Contacto e Isapre
               </span>
             </div>
-            {state.isReferido && (
+            {origen === "referido" && (
               <div className='flex items-center space-x-2'>
                 <div
                   className={cn(
                     "rounded-full size-10 p-2.5 flex items-center justify-center",
                     {
-                      "bg-lexy-primary text-white": !state.isReferido,
+                      "bg-lexy-primary text-white": !origen,
                       "border-2 border-lexy-border-input text-lexy-border-input":
-                        state.isReferido,
+                        origen,
                     }
                   )}>
                   <span>03</span>

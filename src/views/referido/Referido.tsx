@@ -11,18 +11,39 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useGlobalStore } from "@/store/useGlobalStore";
+import { uploadData } from "@/services/data.service";
+import type { GlobalState } from "@/types/global-context.type";
 
 export default function Referido() {
   const navigate = useNavigate();
   const [referCode, setReferCode] = useState<string>("");
   const [codeState, setCodeState] = useState<string>("");
+  const { personalData, contactData, origen, setCodigoReferido } =
+    useGlobalStore();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (referCode.toUpperCase() === "TEST123") {
       setCodeState("valido");
+      setCodigoReferido(referCode);
     } else {
       setCodeState("error");
+    }
+  };
+
+  const completaFormulario = async () => {
+    const data: GlobalState = {
+      personalData: personalData,
+      contactData: contactData,
+      origen: origen,
+      codigo_referido: "",
+    };
+    try {
+      await uploadData(data);
+      navigate("/completo");
+    } catch (error) {
+      console.error("Error al subir los datos:", error);
     }
   };
 
@@ -127,7 +148,7 @@ export default function Referido() {
           </section>
           <section className='flex flex-col space-y-4'>
             <div className='flex items-center space-x-2'>
-              <div className='rounded-full size-10 p-2.5 flex items-center justify-center bg-[#008282] text-white'>
+              <div className='rounded-full size-10 p-2.5 flex items-center justify-center bg-lexy-primary text-white'>
                 <Check />
               </div>
               <span className='text-white font-medium leading-6'>
@@ -135,7 +156,7 @@ export default function Referido() {
               </span>
             </div>
             <div className='flex items-center space-x-2'>
-              <div className='rounded-full size-10 p-2.5 flex items-center justify-center bg-[#008282] text-white'>
+              <div className='rounded-full size-10 p-2.5 flex items-center justify-center bg-lexy-primary text-white'>
                 <Check />
               </div>
               <span className='text-white font-medium leading-6'>
@@ -143,7 +164,7 @@ export default function Referido() {
               </span>
             </div>
             <div className='flex items-center space-x-2'>
-              <div className='rounded-full size-10 p-2.5 flex items-center justify-center bg-[#008282] text-white'>
+              <div className='rounded-full size-10 p-2.5 flex items-center justify-center bg-lexy-primary text-white'>
                 <span>03</span>
               </div>
               <span className='text-white font-medium leading-6'>Referido</span>
@@ -161,7 +182,7 @@ export default function Referido() {
               Si tienes un código de referido, ingrésalo ahora para aplicar tu
               beneficio
             </p>
-            <div className='flex flex-col justify-self-center w-full mt-[48px] max-w-[250px]'>
+            <div className='flex flex-col justify-self-center w-full mt-12 max-w-[250px]'>
               <span className='text-center self-center text-lexy-primary underline mb-4'>
                 ¿Tienes un código de referido?
               </span>
@@ -204,7 +225,7 @@ export default function Referido() {
             </button>
             <button
               type='button'
-              onClick={() => navigate("/completo")}
+              onClick={completaFormulario}
               className='flex items-center justify-center justify-self-end w-fit rounded-sm gap-x-2 bg-lexy-primary not-disabled:hover:bg-lexy-primary/80 disabled:bg-lexy-primary/40 disabled:cursor-not-allowed transition-all py-2.5 px-6 font-medium leading-6 text-white cursor-pointer'>
               Siguiente
               <ChevronRight className='w-5 h-5' />

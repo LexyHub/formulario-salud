@@ -16,5 +16,6 @@ export interface Contact {
 export type GlobalState = {
   personalData: Partial<PersonalData>;
   contactData: Partial<Contact>;
-  isReferido: boolean;
+  origen: "referido" | "mindy" | "normal" | null;
+  codigo_referido: string;
 };
