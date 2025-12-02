@@ -50,14 +50,14 @@ export default function DatosPersonales() {
         </div>
         <div className='grid grid-cols-[auto_1fr] items-center gap-x-4 px-6 py-4'>
           <CircularProgress
-            progress={origen === "referido" ? 33 : 50}
+            progress={origen === "referidos" ? 33 : 50}
             className='size-16'
             emptyClass='text-lexy-menta'
             fillClass='text-lexy-menta-oscuro'>
             <div className='text-sm font-semibold leading-5 text-white space-x-0.5'>
               <span className='text-lexy-menta-oscuro'>1</span>
               <span>/</span>
-              <span>{origen === "referido" ? "3" : "2"}</span>
+              <span>{origen === "referidos" ? "3" : "2"}</span>
             </div>
           </CircularProgress>
           <div>
@@ -128,7 +128,7 @@ export default function DatosPersonales() {
                 Contacto e Isapre
               </span>
             </div>
-            {origen === "referido" && (
+            {origen === "referidos" && (
               <div className='flex items-center space-x-2'>
                 <div className='rounded-full size-10 p-2.5 flex items-center justify-center border-2 border-lexy-border-input text-lexy-border-input'>
                   <span className='leading-6 font-medium'>03</span>

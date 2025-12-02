@@ -9,9 +9,10 @@ type Props = {
   form: Contact;
   errors: Record<string, string | undefined>;
   setField: (field: keyof Contact, value: string) => void;
+  loading?: boolean;
 };
 
-export default function FormFields({ form, errors, setField }: Props) {
+export default function FormFields({ form, errors, setField, loading }: Props) {
   const [rawIsapre, setRawIsapre] = useState<string>("");
   const { isapresOption } = useIsapres();
 
@@ -30,6 +31,7 @@ export default function FormFields({ form, errors, setField }: Props) {
         error={errors.celular}
         value={form.celular}
         onChange={(val) => setField("celular", val)}
+        disabled={loading}
       />
       <Input
         id='email'
@@ -39,6 +41,7 @@ export default function FormFields({ form, errors, setField }: Props) {
         error={errors.correo}
         value={form.correo}
         onChange={(val) => setField("correo", val)}
+        disabled={loading}
       />
       <Select
         id='raw-isapre'
@@ -49,6 +52,7 @@ export default function FormFields({ form, errors, setField }: Props) {
         value={rawIsapre}
         onChange={handleIsapreSelect}
         options={isapresOption}
+        disabled={loading}
       />
       {rawIsapre === "otra" && (
         <Input
@@ -59,6 +63,7 @@ export default function FormFields({ form, errors, setField }: Props) {
           error={errors.isapre}
           value={form.isapre}
           onChange={(val) => setField("isapre", val)}
+          disabled={loading}
         />
       )}
     </div>

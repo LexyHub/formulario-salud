@@ -11,7 +11,9 @@ export default function OriginMiddleware() {
     const rawOrigen = searchParams.get("origen");
 
     const origenFinal =
-      rawOrigen === "referido" || rawOrigen === "mindy" ? rawOrigen : "normal";
+      rawOrigen === "referidos" || rawOrigen === "mindy"
+        ? rawOrigen
+        : "general";
 
     setOrigen(origenFinal);
 

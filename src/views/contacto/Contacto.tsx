@@ -3,12 +3,14 @@ import CircularProgress from "@/components/ui/CircularProgress";
 import { useForm } from "@/hooks/useForm";
 import { ContactScheme } from "@/lib/schemes/contact.scheme";
 import type { Contact, GlobalState } from "@/types/global-context.type";
-import { Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, CircleX } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import FormFields from "./FormFields";
 import { cn } from "@/lib/utils";
 import { useGlobalStore } from "@/store/useGlobalStore";
 import { uploadData } from "@/services/data.service";
+import { useState } from "react";
+import { Loading } from "@/components/ui/Loading";
 
 export default function Contacto() {
   const navigate = useNavigate();
@@ -21,6 +23,8 @@ export default function Contacto() {
     },
     ContactScheme
   );
+  const [loading, setLoading] = useState(false);
+  const [uploadError, setUploadError] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -35,11 +39,24 @@ export default function Contacto() {
       origen: origen,
       codigo_referido: "",
     };
+    if (origen === "referidos") {
+      navigate("/referido");
+      return;
+    }
     try {
-      await uploadData(data);
-      navigate(origen === "referido" ? "/referido" : "/completo");
+      setLoading(true);
+      const response = await uploadData(data);
+      setLoading(false);
+      if (response.status !== "success") {
+        throw new Error("Error en la respuesta del servidor");
+      }
+
+      navigate(response.es_lead_nuevo ? "/completo" : "/bienvenido-de-vuelta");
     } catch (error) {
       console.error("Error al subir los datos:", error);
+      setUploadError("Error al subir los datos. Intenta nuevamente.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -51,14 +68,14 @@ export default function Contacto() {
         </div>
         <div className='grid grid-cols-[auto_1fr] items-center gap-x-4 px-6 py-4'>
           <CircularProgress
-            progress={origen === "referido" ? 50 : 100}
+            progress={origen === "referidos" ? 50 : 100}
             className='size-16'
             emptyClass='text-lexy-menta'
             fillClass='text-lexy-menta-oscuro'>
             <div className='text-sm font-semibold leading-5 text-white space-x-0.5'>
               <span className='text-lexy-menta-oscuro'>2</span>
               <span>/</span>
-              <span>{origen === "referido" ? "3" : "2"}</span>
+              <span>{origen === "referidos" ? "3" : "2"}</span>
             </div>
           </CircularProgress>
           <div>
@@ -66,7 +83,7 @@ export default function Contacto() {
               Únete a los miles que han mejorado su cobertura en{" "}
               <span className='text-lexy-menta-oscuro'>Salud Mental</span>
             </h4>
-            {origen === "referido" && (
+            {origen === "referidos" && (
               <span className='text-lexy-text-disabled text-xs leading-[18px]'>
                 Siguiente: Referido
               </span>
@@ -79,13 +96,25 @@ export default function Contacto() {
           Contacto e Isapre
         </h1>
         <form onSubmit={handleSubmit} id='formulario' className='space-y-6'>
-          <FormFields form={form} errors={errors} setField={setField} />
+          <FormFields
+            form={form}
+            errors={errors}
+            setField={setField}
+            loading={loading}
+          />
         </form>
       </section>
-      <footer className='grid grid-cols-2 gap-x-4 px-6 py-4 border-t border-t-lexy-gray bg-white xl:hidden'>
+      <footer className='relative grid grid-cols-2 gap-x-4 px-6 py-4 border-t border-t-lexy-gray bg-white xl:hidden'>
+        {uploadError.length > 0 && (
+          <div className='absolute self-center justify-self-center flex items-center gap-x-2 -bottom-10 text-lexy-danger'>
+            <CircleX className='w-4 h-4' />
+            <span>{uploadError}</span>
+          </div>
+        )}
         <button
           type='button'
           onClick={() => navigate("/datos-personales")}
+          disabled={loading}
           className='flex items-center justify-center w-full rounded-sm gap-x-2 border-2 border-lexy-primary py-2.5 px-6 font-medium leading-6 text-lexy-primary'>
           <ChevronLeft className='w-5 h-5' />
           Atrás
@@ -93,10 +122,16 @@ export default function Contacto() {
         <button
           type='submit'
           form='formulario'
-          disabled={hasErrors()}
+          disabled={hasErrors() || loading}
           className='flex items-center justify-center w-full rounded-sm gap-x-2 bg-lexy-primary py-2.5 px-6 font-medium leading-6 text-white'>
-          Siguiente
-          <ChevronRight className='w-5 h-5' />
+          {loading ? (
+            <Loading />
+          ) : (
+            <>
+              Siguiente
+              <ChevronRight className='w-5 h-5' />
+            </>
+          )}
         </button>
       </footer>
 
@@ -129,7 +164,7 @@ export default function Contacto() {
                 Contacto e Isapre
               </span>
             </div>
-            {origen === "referido" && (
+            {origen === "referidos" && (
               <div className='flex items-center space-x-2'>
                 <div
                   className={cn(
@@ -152,22 +187,40 @@ export default function Contacto() {
         <form
           onSubmit={handleSubmit}
           className='flex flex-col justify-between bg-white px-8 py-12 rounded-r-2xl shadow-lexy-table w-full'>
-          <FormFields form={form} errors={errors} setField={setField} />
+          <FormFields
+            form={form}
+            errors={errors}
+            setField={setField}
+            loading={loading}
+          />
 
-          <section className='grid grid-cols-2 justify-between'>
+          <section className='relative grid grid-cols-2 justify-between'>
+            {uploadError.length > 0 && (
+              <div className='absolute self-center justify-self-center flex items-center gap-x-2 -bottom-10 text-lexy-danger'>
+                <CircleX className='w-4 h-4' />
+                <span>{uploadError}</span>
+              </div>
+            )}
             <button
               type='button'
               onClick={() => navigate("/datos-personales")}
-              className='flex items-center justify-center w-fit rounded-sm gap-x-2 border-2 border-lexy-primary py-2.5 px-6 font-medium leading-6 text-lexy-primary cursor-pointer'>
+              disabled={loading}
+              className='flex items-center justify-center w-fit rounded-sm gap-x-2 border-2 border-lexy-primary py-2.5 px-6 font-medium leading-6 text-lexy-primary cursor-pointer disabled:cursor-not-allowed'>
               <ChevronLeft className='w-5 h-5' />
-              Atras
+              Atrás
             </button>
             <button
               type='submit'
-              disabled={hasErrors()}
+              disabled={hasErrors() || loading}
               className='flex items-center justify-center justify-self-end w-fit rounded-sm gap-x-2 bg-lexy-primary not-disabled:hover:bg-lexy-primary/80 disabled:bg-lexy-primary/40 disabled:cursor-not-allowed transition-all py-2.5 px-6 font-medium leading-6 text-white cursor-pointer'>
-              Siguiente
-              <ChevronRight className='w-5 h-5' />
+              {loading ? (
+                <Loading />
+              ) : (
+                <>
+                  Siguiente
+                  <ChevronRight className='w-5 h-5' />
+                </>
+              )}
             </button>
           </section>
         </form>
