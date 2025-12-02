@@ -58,15 +58,17 @@ export default function SearchableSelect({
             role='combobox'
             aria-expanded={open}
             className={clsx(
-              "flex items-center justify-between disabled:bg-lexy-input-disabled border border-lexy-border-input rounded-sm transition-colors px-4 py-2 h-10 w-full text-sm md:text-base",
+              "flex items-center justify-between text-start disabled:bg-lexy-input-disabled border border-lexy-border-input rounded-sm transition-colors px-4 py-2 h-10 w-full text-sm md:text-base",
               {
                 "bg-lexy-input-filled": value !== "",
                 "text-[#666666]": !value || value === "",
               }
             )}>
-            {value
-              ? options.find((option) => option.value === value)?.label
-              : placeholder}
+            <span className='line-clamp-1'>
+              {value
+                ? options.find((option) => option.value === value)?.label
+                : placeholder}
+            </span>
             <ChevronDown className='opacity-50' />
           </button>
         </PopoverTrigger>

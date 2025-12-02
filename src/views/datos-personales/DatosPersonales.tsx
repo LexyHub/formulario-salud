@@ -5,15 +5,14 @@ import type { PersonalData } from "@/types/global-context.type";
 import { LexySalud } from "@assets/images";
 import CircularProgress from "@components/ui/CircularProgress";
 import { ChevronRight } from "lucide-react";
-import { useEffect, useMemo } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import FormFields from "./FormFields";
-import { useGlobalContext } from "@/contexts/GlobalContext";
+import { useGlobalStore } from "@/store/useGlobalStore";
 
 export default function DatosPersonales() {
   const navigate = useNavigate();
-  const location = useLocation();
-  const { setIsReferido, state, setPersonalData } = useGlobalContext();
+  const { origen, setPersonalData } = useGlobalStore();
   const { regionOptions, getComunaOptions } = useGeoData();
   const { form, setField, errors, validate, hasErrors } = useForm<PersonalData>(
     {
@@ -27,12 +26,6 @@ export default function DatosPersonales() {
     PersonalDataScheme
   );
 
-  useEffect(() => {
-    if (location.search === "?referido" && !state.isReferido) {
-      setIsReferido(true);
-    }
-  }, [location.search, state.isReferido, setIsReferido]);
-
   const comunaOptions = useMemo(
     () => getComunaOptions(form.region),
     [form.region, getComunaOptions]
@@ -45,6 +38,7 @@ export default function DatosPersonales() {
       return;
     }
     setPersonalData(result.data);
+
     navigate("/contacto-isapre");
   };
 
@@ -56,14 +50,14 @@ export default function DatosPersonales() {
         </div>
         <div className='grid grid-cols-[auto_1fr] items-center gap-x-4 px-6 py-4'>
           <CircularProgress
-            progress={state.isReferido ? 33 : 50}
+            progress={origen === "referidos" ? 33 : 50}
             className='size-16'
             emptyClass='text-lexy-menta'
             fillClass='text-lexy-menta-oscuro'>
             <div className='text-sm font-semibold leading-5 text-white space-x-0.5'>
               <span className='text-lexy-menta-oscuro'>1</span>
               <span>/</span>
-              <span>{state.isReferido ? "3" : "2"}</span>
+              <span>{origen === "referidos" ? "3" : "2"}</span>
             </div>
           </CircularProgress>
           <div>
@@ -134,7 +128,7 @@ export default function DatosPersonales() {
                 Contacto e Isapre
               </span>
             </div>
-            {state.isReferido && (
+            {origen === "referidos" && (
               <div className='flex items-center space-x-2'>
                 <div className='rounded-full size-10 p-2.5 flex items-center justify-center border-2 border-lexy-border-input text-lexy-border-input'>
                   <span className='leading-6 font-medium'>03</span>

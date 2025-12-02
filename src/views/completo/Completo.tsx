@@ -5,7 +5,7 @@ import { CircleCheck, CircleHelp, Files } from "lucide-react";
 import { useState } from "react";
 import ContenidoDrawer from "./ContenidoDrawer";
 import ContenidoDialog from "./ContenidoDialog";
-import { useGlobalContext } from "@/contexts/GlobalContext";
+import { useGlobalStore } from "@/store/useGlobalStore";
 
 export default function Completo() {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -13,23 +13,12 @@ export default function Completo() {
   const [displayedContent, setDisplayedContent] = useState<
     "preguntas" | "documentos" | ""
   >("");
-  const { state } = useGlobalContext();
+  const { contactData } = useGlobalStore();
 
   const handleClick = (content: "preguntas" | "documentos" | "") => {
     setOpen(true);
     setDisplayedContent(content);
   };
-
-  if (!localStorage.getItem("completo")) {
-    localStorage.setItem(
-      "completo",
-      JSON.stringify({
-        nombres: state.personalData.nombres,
-        apellidos: state.personalData.apellidos,
-        rut: state.personalData.rut,
-      })
-    );
-  }
 
   return (
     <main className='grid grid-rows-[1fr_auto] xl:flex xl:items-center xl:justify-center min-h-dvh h-fit w-dvw font-archivo bg-white xl:bg-lexy-bg-secondary'>
@@ -82,8 +71,8 @@ export default function Completo() {
         <Drawer open={open} onOpenChange={setOpen}>
           <ContenidoDrawer
             isapre={{
-              name: state.contactData.isapre || "",
-              url: state.contactData.isapre || "",
+              name: contactData.isapre || "",
+              url: contactData.isapre || "",
             }}
             active={displayedContent}
           />
@@ -92,8 +81,8 @@ export default function Completo() {
         <Dialog modal={true} open={open} onOpenChange={setOpen}>
           <ContenidoDialog
             isapre={{
-              name: state.contactData.isapre || "",
-              url: state.contactData.isapre || "",
+              name: contactData.isapre || "",
+              url: contactData.isapre || "",
             }}
             active={displayedContent}
           />
