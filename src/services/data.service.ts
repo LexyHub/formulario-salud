@@ -20,7 +20,7 @@ export async function uploadData(data: GlobalState): Promise<UPLOAD_RESPONSE> {
     apellidos: data.personalData.apellidos,
     rut: data.personalData.rut,
     email: data.contactData.correo,
-    celular: data.contactData.celular,
+    celular: `+569${data.contactData.celular?.replaceAll(" ", "")}`,
     region: data.personalData.region,
     comuna: data.personalData.comuna,
     direccion: data.personalData.domicilio,
