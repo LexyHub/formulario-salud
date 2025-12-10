@@ -1,6 +1,7 @@
 import type { GlobalState } from "@/types/global-context.type";
 
-const API_URL = import.meta.env.VITE_API_URL;
+// const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_TEST_URL;
 
 export type UPLOAD_RESPONSE = {
   correlation_id: string;
