@@ -16,7 +16,7 @@ interface GlobalStore extends GlobalState {
 const initialState: GlobalState = {
   personalData: {},
   contactData: {},
-  origen: "general",
+  origen: null,
   codigo_referido: "",
 };
 
