@@ -4,7 +4,7 @@ import Completo from "@views/completo/Completo";
 import Contacto from "@views/contacto/Contacto";
 import DatosPersonales from "@views/datos-personales/DatosPersonales";
 import NoEncontrado from "@views/no-encontrado/NoEncontrado";
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import OriginMiddleware from "./Origin.middleware";
 import PrivateRoute from "./PrivateRoute";
 
@@ -12,34 +12,40 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <OriginMiddleware />,
-  },
-  {
-    path: "/datos-personales",
-    element: <DatosPersonales />,
-  },
-  {
-    element: <PrivateRoute />,
     children: [
       {
-        path: "/contacto-isapre",
-        element: <Contacto />,
+        index: true,
+        element: <Navigate to='/datos-personales' replace />,
       },
       {
-        path: "/referido",
-        element: <Referido />,
+        path: "datos-personales",
+        element: <DatosPersonales />,
       },
       {
-        path: "/completo",
-        element: <Completo />,
+        element: <PrivateRoute />,
+        children: [
+          {
+            path: "contacto-isapre",
+            element: <Contacto />,
+          },
+          {
+            path: "referido",
+            element: <Referido />,
+          },
+          {
+            path: "completo",
+            element: <Completo />,
+          },
+        ],
+      },
+      {
+        path: "bienvenido-de-vuelta",
+        element: <Bienvenido />,
+      },
+      {
+        path: "*",
+        element: <NoEncontrado />,
       },
     ],
-  },
-  {
-    path: "/bienvenido-de-vuelta",
-    element: <Bienvenido />,
-  },
-  {
-    path: "*",
-    element: <NoEncontrado />,
   },
 ]);

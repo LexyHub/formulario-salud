@@ -1,24 +1,35 @@
 import { useGlobalStore } from "@/store/useGlobalStore";
 import { useEffect } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import {
+  Outlet,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 
 export default function OriginMiddleware() {
   const [searchParams] = useSearchParams();
-  const { setOrigen } = useGlobalStore();
+  const { origen, setOrigen } = useGlobalStore();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    const rawOrigen = searchParams.get("origen");
+    if (origen) return;
 
+    const rawOrigen = searchParams.get("origen");
     const origenFinal =
       rawOrigen === "referidos" || rawOrigen === "mindy"
         ? rawOrigen
         : "general";
 
     setOrigen(origenFinal);
+  }, [origen, searchParams, setOrigen]);
 
-    navigate("/datos-personales", { replace: true });
-  }, [searchParams, setOrigen, navigate]);
+  useEffect(() => {
+    if (location.pathname === "/") {
+      navigate("/datos-personales", { replace: true });
+    }
+  }, [location.pathname, navigate]);
 
-  return null;
+  return <Outlet />;
 }

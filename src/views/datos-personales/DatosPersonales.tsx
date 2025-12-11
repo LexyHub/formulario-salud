@@ -12,16 +12,16 @@ import { useGlobalStore } from "@/store/useGlobalStore";
 
 export default function DatosPersonales() {
   const navigate = useNavigate();
-  const { origen, setPersonalData } = useGlobalStore();
+  const { origen, setPersonalData, personalData } = useGlobalStore();
   const { regionOptions, getComunaOptions } = useGeoData();
   const { form, setField, errors, validate, hasErrors } = useForm<PersonalData>(
     {
-      nombres: "",
-      apellidos: "",
-      rut: "",
-      region: "",
-      comuna: "",
-      domicilio: "",
+      nombres: personalData.nombres ?? "",
+      apellidos: personalData.apellidos ?? "",
+      rut: personalData.rut ?? "",
+      region: personalData.region ?? "",
+      comuna: personalData.comuna ?? "",
+      domicilio: personalData.domicilio ?? "",
     },
     PersonalDataScheme
   );

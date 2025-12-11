@@ -9,22 +9,31 @@ import FormFields from "./FormFields";
 import { cn } from "@/lib/utils";
 import { useGlobalStore } from "@/store/useGlobalStore";
 import { uploadData } from "@/services/data.service";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Loading } from "@/components/ui/Loading";
+import { PersonalDataScheme } from "@/lib/schemes/personal-data.scheme";
 
 export default function Contacto() {
   const navigate = useNavigate();
-  const { personalData, origen, setContactData } = useGlobalStore();
+  const { personalData, contactData, origen, setContactData } =
+    useGlobalStore();
   const { form, setField, errors, validate, hasErrors } = useForm<Contact>(
     {
-      celular: "",
-      correo: "",
-      isapre: "",
+      celular: contactData.celular ?? "",
+      correo: contactData.correo ?? "",
+      isapre: contactData.isapre ?? "",
     },
     ContactScheme
   );
   const [loading, setLoading] = useState(false);
   const [uploadError, setUploadError] = useState<string>("");
+
+  useEffect(() => {
+    const result = PersonalDataScheme.safeParse(personalData);
+    if (!result.success) {
+      navigate("/datos-personales", { replace: true });
+    }
+  });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
