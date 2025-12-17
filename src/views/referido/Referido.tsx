@@ -20,8 +20,13 @@ export default function Referido() {
   const navigate = useNavigate();
   const [referCode, setReferCode] = useState<string>("");
   const [codeState, setCodeState] = useState<string>("");
-  const { personalData, contactData, origen, setCodigoReferido } =
-    useGlobalStore();
+  const {
+    personalData,
+    contactData,
+    origen,
+    setCodigoReferido,
+    codigo_referido,
+  } = useGlobalStore();
   const [loading, setLoading] = useState(false);
   const [uploadError, setUploadError] = useState<string>("");
   const [validating, setValidating] = useState(false);
@@ -53,7 +58,7 @@ export default function Referido() {
       personalData: personalData,
       contactData: contactData,
       origen: origen,
-      codigo_referido: "",
+      codigo_referido: codigo_referido ?? "",
     };
     try {
       setLoading(true);
