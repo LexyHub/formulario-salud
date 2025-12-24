@@ -12,11 +12,13 @@ import { uploadData } from "@/services/data.service";
 import { useEffect, useState } from "react";
 import { Loading } from "@/components/ui/Loading";
 import { PersonalDataScheme } from "@/lib/schemes/personal-data.scheme";
+import { useGeoData } from "@/hooks/useGeoData";
 
 export default function Contacto() {
   const navigate = useNavigate();
   const { personalData, contactData, origen, setContactData } =
     useGlobalStore();
+  const { getRegionName, getComunaName } = useGeoData();
   const { form, setField, errors, validate, hasErrors } = useForm<Contact>(
     {
       celular: contactData.celular ?? "",
@@ -43,7 +45,14 @@ export default function Contacto() {
     }
     setContactData(result.data);
     const data: GlobalState = {
-      personalData: personalData,
+      personalData: {
+        ...personalData,
+        region: getRegionName(personalData.region ?? ""),
+        comuna: getComunaName(
+          personalData.region ?? "",
+          personalData.comuna ?? ""
+        ),
+      },
       contactData: result.data,
       origen: origen,
       codigo_referido: "",

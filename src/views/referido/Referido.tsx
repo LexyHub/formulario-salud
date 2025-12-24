@@ -15,6 +15,7 @@ import { useGlobalStore } from "@/store/useGlobalStore";
 import { uploadData, validarCodigoReferido } from "@/services/data.service";
 import type { GlobalState } from "@/types/global-context.type";
 import { Loading } from "@/components/ui/Loading";
+import { useGeoData } from "@/hooks/useGeoData";
 
 export default function Referido() {
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ export default function Referido() {
     setCodigoReferido,
     codigo_referido,
   } = useGlobalStore();
+  const { getRegionName, getComunaName } = useGeoData();
   const [loading, setLoading] = useState(false);
   const [uploadError, setUploadError] = useState<string>("");
   const [validating, setValidating] = useState(false);
@@ -55,7 +57,14 @@ export default function Referido() {
 
   const completaFormulario = async () => {
     const data: GlobalState = {
-      personalData: personalData,
+      personalData: {
+        ...personalData,
+        region: getRegionName(personalData.region ?? ""),
+        comuna: getComunaName(
+          personalData.region ?? "",
+          personalData.comuna ?? ""
+        ),
+      },
       contactData: contactData,
       origen: origen,
       codigo_referido: codigo_referido ?? "",

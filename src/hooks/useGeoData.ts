@@ -34,6 +34,13 @@ export function useGeoData() {
       value: c,
     }));
 
+  const getRegionName = (regionKey: string) => regions[regionKey]?.nombre ?? "";
+
+  const getComunaName = (regionKey: string, comunaValue: string) => {
+    const comunas = getCommunesByRegion(regionKey);
+    return comunas.find((c) => c === comunaValue) ?? "";
+  };
+
   return {
     countries,
     regions,
@@ -41,5 +48,7 @@ export function useGeoData() {
     regionOptions,
     getCommunesByRegion,
     getComunaOptions,
+    getRegionName,
+    getComunaName,
   };
 }
